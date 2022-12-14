@@ -1,18 +1,14 @@
-import React, { FC } from 'react'
+import React, { ComponentType } from 'react'
 import Footer from './Footer'
 import Header from './Header'
 
-type Props = {
-    value: string;
-    ID: number
-};
 
-const hocFunc = (Component: FC<Props>): FC => {
-    return () => {
+function hocFunc <T>(Component: ComponentType<T>) {
+    return (props: T & {}) => {
         return (
             <div>
                 <Header />
-                <Component value='abc' ID={123} />
+                <Component value='abc' ID={123} {...props} />
                 <Footer />
             </div>
         )

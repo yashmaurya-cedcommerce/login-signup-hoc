@@ -8,8 +8,8 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Login loginProps="sas"/>} />
+        <Route path="/signup" element={<Signup signupProps="dasd" />} />
       </Routes>
     </div>
   );
